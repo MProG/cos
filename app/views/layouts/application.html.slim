@@ -1,0 +1,25 @@
+doctype html
+
+html
+  head
+    title COS
+
+    = stylesheet_link_tag "application", media: "all"
+    = stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    = stylesheet_link_tag "http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css"
+
+    = javascript_include_tag "application"
+
+    = csrf_meta_tags
+
+  body.hold-transition.lockscreen
+    ul.list-group
+      li.list-group-item
+        span.badge 14
+        | Cras justo odio
+
+
+    == yield
+
+    .lockscreen-footer.text-center
+      ' Copyright ©2016
