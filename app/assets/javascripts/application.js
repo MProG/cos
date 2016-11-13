@@ -12,5 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
+//= require foundation
+//= require highcharts
+//= require highcharts/highcharts-more
+//= require highcharts/adapters/standalone-framework
+
 //= require_tree .
+
+$(document).foundation();
+
+$(function(){ $(document).foundation(); });
