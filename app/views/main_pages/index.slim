@@ -1,2 +1,11 @@
 / = high_chart_globals(@chart_globals)
-= high_chart("some_id", @chart)
+
+= form_tag main_pages_path, :multipart => true do
+  = file_field_tag "file"
+  = submit_tag
+
+/ h2.subheader
+/   | Example 1
+/   i.fa.fa-bookmark
+/ #container1
+

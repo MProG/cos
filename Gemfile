@@ -14,7 +14,6 @@ gem 'slim'
 gem 'pry-rails'
 gem 'foundation-rails'
 
-gem 'highcharts-rails'
 gem "highstocks-rails"   
 gem 'simple_form'
 gem 'lazy_high_charts'
