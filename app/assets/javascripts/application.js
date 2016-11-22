@@ -13,10 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require highcharts/highcharts
-//= require highcharts/highcharts-more
-//= require highcharts/highstock
-
+//= require highstock
+//= require highstock/modules/exporting
 //= require_tree .
 
 $(document).foundation();
