@@ -1,0 +1,22 @@
+.row
+  h1 Graphs
+.row
+  = link_to 'Add new graph', new_graph_path, class: 'button'
+
+.row
+  .small-6.left.columns
+    h5 Name
+  .small-6.columns
+    h5 Actions
+  hr
+
+- @graphs.each do |graph|
+  .row
+    .small-6.left.columns
+      h5 = graph.name
+
+    .small-6.left.columns
+      = link_to 'show', graph_path(graph), class: 'button small'
+      = link_to 'delete', graph_path(graph), method: :delete,  class: 'button small alert'
+
+    hr

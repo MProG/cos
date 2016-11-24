@@ -1,0 +1,6 @@
+.row
+  h4 Add new file
+.row
+  = form_tag main_pages_path, :multipart => true do
+    = file_field_tag "file"
+    = submit_tag
