@@ -5,9 +5,6 @@ class GraphsController < ApplicationController
     @graphs = Graph.all
   end
 
-  def create 
-  end
-
   def destroy
     @graph.destroy
     redirect_to graphs_path

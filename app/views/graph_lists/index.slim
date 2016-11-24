@@ -1,5 +1,12 @@
 h1 GraphLists
 
+.row
+  h4 Uplad file with graph list
+.row
+  = form_tag graph_lists_path, :multipart => true do
+    = file_field_tag "file"
+    = submit_tag
+
 - i = 0
 
 - @charts.each do |chart|
