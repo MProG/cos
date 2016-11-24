@@ -1,5 +1,5 @@
 class BinReaderService
-  attr_reader :file, :value_in_sec, :min_value, :max_value, :data_size
+  attr_reader :file, :step_time, :min_value, :max_value, :data_size, :values_in_sec
 
   def initialize(file)
     @file = file
@@ -8,7 +8,6 @@ class BinReaderService
   def read
     values = []
     data = []
-    time = 0
  
     return unless file.read(4) == "TMB1"
     file_params
@@ -17,19 +16,14 @@ class BinReaderService
       values << read_float
     end
 
-    values.each do |value|
-      data << [time, value]
-      time = time + value_in_sec
-    end
-
-    {data: data, max_value: max_value, min_value: min_value, values: values}
+    {max_value: max_value, min_value: min_value, values: values, values_in_sec: values_in_sec}
   end
 
   private
 
   def file_params
     n_pipe = read_int
-    n_points = read_int
+    @values_in_sec = read_int
     n_spectr = read_int
     f_sreza = read_int
     f_rezreshenie = read_float
@@ -40,7 +34,7 @@ class BinReaderService
     system_n_block = read_int
     @max_value = read_float
     @min_value = read_float
-    @value_in_sec = 1.0 / n_points
+    @step_time = 1.0 / values_in_sec
   end
 
   def read_int

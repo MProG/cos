@@ -15,5 +15,7 @@ html lang="en"
       .top-bar-left
         ul.dropdown.menu data-dropdown-menu="" 
           li.menu-text My Cool app
+          li = link_to 'Graphs', graphs_path
+          li = link_to 'Graph List', graph_lists_path
 
     == yield

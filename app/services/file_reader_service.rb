@@ -1,26 +1,17 @@
 class FileReaderService
+  attr_reader :file
+
+  def initialize(file)
+    @file = file
+  end
+
   def read
-    step = time = value_in_sec = 0
-    values = []
-    data = []
+    file_names = []
 
-    File.open("vendor/PRIM1.TXT", "r").each_line do |line|
-      value = line.gsub!( /\r\n/, "").to_f
-
-      if step >= 5
-        values << value.to_f
-        time = time + value_in_sec
-      elsif step == 1
-        value_in_sec = 1.0 / value.to_f
-      end
-      step += 1
+    file.each_line do |line|
+      file_names << line.gsub!( /\r\n/, "").to_f
     end
 
-    values.each do |value|
-      data << [time, value]
-      time = time + value_in_sec
-    end
-
-    {data: data, max_value: values.max, min_value: values.min, values: values}
+    file_names
   end
 end
