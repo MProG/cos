@@ -37,11 +37,15 @@ class GraphCreateService
   def write_multiply_graph(data, values_attribute)
     LazyHighCharts::HighChart.new('graph') do |f|
       f.subtitle(text: values_attribute)
-      f.title(text: name)
+      f.title(text: 'Combined Chart')
       f.xAxis(type: 'time')
       f.yAxis(title: { text: 'Value'})
       f.legend(enabled: false)
-      f.series(type: 'line', name: "Value", data: data)
+
+      data.each do |key, values|
+        f.series(type: 'line', name: key.to_s, data: values)
+      end
+
       f.chart(zoomType: 'x')
 
       f.plotOptions(

@@ -14,7 +14,7 @@ class GraphsController < ApplicationController
   end
 
   def show
-    @graph_data = GraphBuilderService.new(@graph).build
+    @graph_data = GraphBuilderService.new.build(@graph)
   end
 
   def new

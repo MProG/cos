@@ -1,20 +1,25 @@
 class GraphBuilderService
   attr_reader :graph
 
-  def initialize(graph)
-    @graph = graph
-  end
-
-  def build
-    data = graph_data
+  def build(graph)
+    data = graph_data(graph)
     chart = GraphCreateService.new.write_graph(data[:data], graph.name, math_values(data))
 
     chart
   end
 
+  def multi_chart(graphs)
+    data = {}
+    graphs.each do |graph|
+      data[graph.name] = graph_data(graph)[:data]
+    end
+
+    GraphCreateService.new.write_multiply_graph(data, '')
+  end
+
   private
 
-  def graph_data
+  def graph_data(graph)
     time = 0.0
     data = []
 
