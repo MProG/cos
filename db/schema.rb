@@ -10,20 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161123175759) do
-
+ActiveRecord::Schema.define(version: 20_161_123_175_759) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "graphs", force: :cascade do |t|
-    t.string   "name"
-    t.float    "max_value"
-    t.float    "min_value"
-    t.float    "values",        default: [],              array: true
-    t.integer  "values_in_sec"
-    t.integer  "size"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+  create_table 'graphs', force: :cascade do |t|
+    t.string 'name'
+    t.float 'max_value'
+    t.float 'min_value'
+    t.float 'values', default: [], array: true
+    t.integer 'values_in_sec'
+    t.integer 'size'
+    t.datetime 'created_at',                 null: false
+    t.datetime 'updated_at',                 null: false
   end
-
 end

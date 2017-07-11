@@ -16,8 +16,6 @@ class GraphListsController < ApplicationController
 
   private
 
-
-
   def chart_list(graphs)
     @charts = [GraphBuilderService.new.multi_chart(graphs)]
 

@@ -14,5 +14,4 @@
 #
 
 class Graph < ApplicationRecord
-  
 end
