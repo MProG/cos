@@ -6,7 +6,7 @@ class FileReaderService
   end
 
   def read
-    file_names = []
+    file_names =[]
     file.read.each_line do |line|
       file_names << line.gsub!(/\r\n/, '')
     end
