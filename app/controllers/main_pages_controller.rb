@@ -4,9 +4,9 @@ class MainPagesController < ApplicationController
     data = BinReaderService.new(file).read
 
     params = {
-      values: data[:values], 
-      max_value: data[:max_value], 
-      min_value: data[:min_value], 
+      values: data[:values],
+      max_value: data[:max_value],
+      min_value: data[:min_value],
       values_in_sec: data[:values_in_sec],
       name: file.original_filename
     }

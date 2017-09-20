@@ -28,16 +28,16 @@ class GraphBuilderService
 
     values.each do |value|
       data << [time, value]
-      time = time + step
+      time += step
     end
 
-    {data: data, max_value: values.max, min_value: values.min, values: graph.values}
+    { data: data, max_value: values.max, min_value: values.min, values: graph.values }
   end
 
   def math_values(data)
     max = data[:max_value]
     min = data[:min_value]
-    srm = Math.sqrt(data[:values].map{|i| i**2}.sum / data[:values].count)
+    srm = Math.sqrt(data[:values].map { |i| i**2 }.sum / data[:values].count)
     "Max: #{max} ; Min: #{min} ; Размах: #{max - min} ; СКР: #{srm} ; Пик фактор: #{max - srm}"
   end
 end
