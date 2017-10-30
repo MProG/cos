@@ -14,7 +14,7 @@ class GraphBuilderService
       data[graph.name] = graph_data(graph)[:data]
     end
 
-    GraphCreateService.new.write_multiply_graph(data, '')
+    GraphCreateService.new.write_multiply_graph(data, "")
   end
 
   private

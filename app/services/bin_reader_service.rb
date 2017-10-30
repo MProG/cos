@@ -9,7 +9,7 @@ class BinReaderService
     values = []
     data = []
 
-    return unless file.read(4) == 'TMB1'
+    return unless file.read(4) == "TMB1"
     file_params
 
     data_size.times do
@@ -38,10 +38,10 @@ class BinReaderService
   end
 
   def read_int
-    file.read(4).unpack('L').first
+    file.read(4).unpack("L").first
   end
 
   def read_float
-    file.read(4).unpack('F').first
+    file.read(4).unpack("F").first
   end
 end

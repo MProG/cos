@@ -43,7 +43,7 @@ class IntegralBuilderService
   def math_values(values)
     max = values.max
     min = values.min
-    values_sum = values.map{ |i| i**2 }.sum
+    values_sum = values.map { |i| i**2 }.sum
     srm = Math.sqrt(values_sum / values.count)
     "Max: #{max} ; Min: #{min} ; Размах: #{max - min} ; СКР: #{srm} ; Пик фактор: #{max - srm}"
   end

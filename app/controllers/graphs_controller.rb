@@ -16,8 +16,7 @@ class GraphsController < ApplicationController
     @second_integral_graph = integral_service.second_build
   end
 
-  def new
-  end
+  def new; end
 
   private
 
