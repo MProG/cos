@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require highstock
+//= require highstock              
+//= require highcharts/highcharts-more   
 //= require highstock/modules/exporting
 //= require_tree .
 

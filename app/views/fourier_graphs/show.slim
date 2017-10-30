@@ -1,0 +1,9 @@
+br
+.row
+  .columns.medium-6
+    = select_tag "window_size", options_for_select(window_size_list(@graph_size), 2048), id: 'window-size'
+  .columns.medium-2.float-left
+    = link_to 'Aplay', '#', id: 'apply-fft', class: 'button'
+
+#fft_graph
+= hidden_field_tag 'data_path', @data_path
